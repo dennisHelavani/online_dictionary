@@ -16,7 +16,7 @@ const ResultList = () => {
     if (word.length) {
       fetchData(word);
     }
-  }, [word]);
+  }, []);
   const { inputValue } = useContext(InputContext);
   const [response, setResponse] = useState(null);
   const [error, setError] = useState("");
@@ -55,9 +55,7 @@ const ResultList = () => {
     return (
       <div className="not-found">
         <h3 className="searched-word">No definition has been found 😔 </h3>
-        <p>
-          Redirect to <a href="../App.js">Home page</a>
-        </p>
+        <p>Try again</p>
       </div>
     );
   }
