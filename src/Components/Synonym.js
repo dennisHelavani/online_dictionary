@@ -5,8 +5,10 @@ const Synonym = ({ mean }) => {
         val.meanings.map((means) =>
           means.synonyms.map((syn, i) => {
             return (
-              <div key={i}>
-                <li className="definition-li">{syn}</li>
+              <div>
+                <li key={i} className="definition-li">
+                  {syn}
+                </li>
               </div>
             );
           })

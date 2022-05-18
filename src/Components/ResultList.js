@@ -13,8 +13,10 @@ const ResultList = () => {
   const { word } = useParams();
 
   useEffect(() => {
-    word && fetchData(word);
-  }, []);
+    if (word.length) {
+      fetchData(word);
+    }
+  }, [word]);
   const { inputValue } = useContext(InputContext);
   const [response, setResponse] = useState(null);
   const [error, setError] = useState("");
@@ -63,9 +65,9 @@ const ResultList = () => {
     <div className="result-container">
       {response && (
         <div>
-          {/* <h3 className="searched-word">
+          <h3 className="searched-word">
             Result for: <span>{word}</span>
-          </h3> */}
+          </h3>
           {audio ? (
             <audio controls className="" src={audio}></audio>
           ) : (

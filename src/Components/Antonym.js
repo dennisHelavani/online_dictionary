@@ -5,8 +5,10 @@ const Antonym = ({ mean }) => {
         val.meanings.map((means) =>
           means.antonyms.map((ant, i) => {
             return (
-              <div key={i}>
-                <li className="definition-li">{ant}</li>
+              <div>
+                <li key={i}  className="definition-li">
+                  {ant}
+                </li>
               </div>
             );
           })
