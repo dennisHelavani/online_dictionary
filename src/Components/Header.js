@@ -4,13 +4,13 @@ import { InputContext } from "../App";
 
 const Header = () => {
   const [value, setValue] = useState("");
-  const { setInputValue } = useContext(InputContext);
+  const { inputValue, setInputValue } = useContext(InputContext);
   const handleInputChange = (e) => setValue(e.target.value);
   const handleSubmit = () => {
     setInputValue(value);
     setValue("");
   };
-  
+
   return (
     <div className="head-container">
       <div className="dictionary-head-name">
@@ -23,7 +23,6 @@ const Header = () => {
           placeholder="Type your word"
           onChange={handleInputChange}
           value={value}
-        
         />
         <Link to={value}>
           <button className="dictionary-search-btn" onClick={handleSubmit}>
@@ -31,11 +30,11 @@ const Header = () => {
           </button>
         </Link>
       </div>
-      {/* {inputValue && (
+      {inputValue && (
         <h3 className="searched-word">
           Result for: <span>{inputValue}</span>
         </h3>
-      )} */}
+      )}
     </div>
   );
 };
